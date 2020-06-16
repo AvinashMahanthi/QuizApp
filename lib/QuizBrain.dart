@@ -1,28 +1,9 @@
+import 'question.dart';
 
-# QuizApp
-## Our Goal
+class QuizBrain {
+  int _questionNum = 0;
 
-In this tutorial we will be reviewing Stateful and Stateless Widgets as well as learning about the fundamental building blocks of Object Oriented Programming (OOP) - Classes and Objects. 
-
-
-## What you will create
-
-We’re going to make a quiz app that tests your general knowledge. As one of the most popular types of apps on the app stores, you can create your own quiz for other people to enjoy!
-
-## What are involved
-
-- Modularising your code into separate classes.
-- Dart classes and objects.
-- Using class constructors.
-- Extracting Widgets to refactor your code.
-- private and public modifiers in Dart.
-- How to use Dart lists.
-- The difference between var, const and final.
-
-## Code Snippet for Project
-
-```
-Question('Some cats are actually allergic to humans', true),
+  List<Question> _questionBank = [
     Question('You can lead a cow down stairs but not up stairs.', false),
     Question('Approximately one quarter of human bones are in the feet.', true),
     Question('A slug\'s blood is green.', true),
@@ -47,8 +28,19 @@ Question('Some cats are actually allergic to humans', true),
     Question(
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
+  ];
 
-```
+  String getQuestionText() {
+    return _questionBank[_questionNum].QuestionText;
+  }
 
+  bool getCorrectAnswer() {
+    return _questionBank[_questionNum].QuestionAnswer;
+  }
 
->
+  void nextquestion() {
+    if (_questionNum < _questionBank.length - 1) {
+      _questionNum++;
+    }
+  }
+}
