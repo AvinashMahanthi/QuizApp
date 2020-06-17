@@ -30,17 +30,29 @@ class QuizBrain {
         true),
   ];
 
-  String getQuestionText() {
-    return _questionBank[_questionNum].QuestionText;
-  }
-
-  bool getCorrectAnswer() {
-    return _questionBank[_questionNum].QuestionAnswer;
-  }
-
   void nextquestion() {
     if (_questionNum < _questionBank.length - 1) {
       _questionNum++;
     }
+  }
+
+  String getQuestionText() {
+    return _questionBank[_questionNum].questionText;
+  }
+
+  bool getCorrectAnswer() {
+    return _questionBank[_questionNum].questionAnswer;
+  }
+
+  bool isFinished() {
+    if (_questionNum >= _questionBank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void reset() {
+    _questionNum = 0;
   }
 }
