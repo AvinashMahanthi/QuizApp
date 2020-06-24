@@ -16,6 +16,7 @@ A quiz app that tests your general knowledge. As one of the most popular types o
 
 
 ## App interface
+
 <img src="https://user-images.githubusercontent.com/54079190/84893131-5f740280-b0bc-11ea-865b-bfd0df98a2ec.jpg" width="25%"></img>
 
 
